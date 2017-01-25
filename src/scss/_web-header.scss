@@ -1,0 +1,9 @@
+// variables
+$web-header-title-font: $titles-font-family;
+
+// styles
+.web-header {
+    .web-title {
+        font-family: $web-header-title-font;
+    }
+}

@@ -1,0 +1,78 @@
+// responsive breakpoints
+$large-screen-width: 1024px; 
+$medium-screen-width: 768px; 
+$small-screen-width: $medium-screen-width - 1px;
+
+// font families
+$titles-font-family: 'Fjalla One', sans-serif;
+$main-font-family: 'Average', serif;
+$body-font-family: $main-font-family;
+
+// font sizes
+$font-size-base: 16px;
+$font-size-small: $font-size-base - 6px;
+$font-size-large: $font-size-base + 6px;
+$font-size-h1: $font-size-base + 15px;
+$font-size-h2: $font-size-base + 12px;
+$font-size-h3: $font-size-base + 9px;
+$font-size-h4: $font-size-base + 6px;
+$font-size-h5: $font-size-base + 3px;
+$font-size-h6: $font-size-base;
+
+// colors
+$color-plugging: #0B110D;
+$color-scary-water: #2C4D56;
+$color-sunset-dock: #C3AA72;
+$color-sky-warning: #DC7612;
+$color-sailors-warning: #BD3200;
+
+// components colors
+$color-primary: $color-scary-water;
+$color-secondary: $color-sky-warning;
+$main-text-color: $color-plugging;
+$header-text-color: white;
+$body-background-color: white;
+
+
+// override bootstrap variables
+
+// breakpoints
+$screen-md: $large-screen-width;
+$screen-sm: $medium-screen-width;
+
+// inverted navbar
+// reset inverted navbar basics
+$navbar-inverse-color: $header-text-color;
+$navbar-inverse-bg: $color-primary;
+$navbar-inverse-border: $color-primary;
+
+// inverted navbar links
+$navbar-inverse-link-color: $navbar-inverse-color;
+$navbar-inverse-link-hover-color: $navbar-inverse-color;
+$navbar-inverse-link-hover-bg: $color-secondary;
+$navbar-inverse-link-active-color: $navbar-inverse-link-hover-color;
+$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 10%);
+$navbar-inverse-link-disabled-color: #444;
+$navbar-inverse-link-disabled-bg: transparent;
+
+// inverted navbar brand label
+$navbar-inverse-brand-color: $navbar-inverse-color;
+$navbar-inverse-brand-hover-color: $navbar-inverse-color;
+$navbar-inverse-brand-hover-bg: transparent;
+
+// inverted navbar toggle
+$navbar-inverse-toggle-hover-bg: transparent;
+$navbar-inverse-toggle-icon-bar-bg: white;
+$navbar-inverse-toggle-border-color: transparent;
+
+// hamburger
+$hamburger-padding-x                       : 15px;
+$hamburger-padding-y                       : 13px;
+$hamburger-layer-width                     : 24px;
+$hamburger-layer-height                    : 2px;
+$hamburger-layer-spacing                   : 6px;
+$hamburger-layer-color                     : white;
+$hamburger-layer-border-radius             : 2px;
+$hamburger-types: (
+  collapse,
+);
