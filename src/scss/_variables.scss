@@ -1,17 +1,16 @@
 // responsive breakpoints
-$large-screen-width: 1024px; 
 $medium-screen-width: 768px; 
-$small-screen-width: $medium-screen-width - 1px;
+$large-screen-width: 1024px; 
 
 // font families
-$titles-font-family: 'Fjalla One', sans-serif;
-$main-font-family: 'Average', serif;
+$titles-font-family: 'Montserrat', sans-serif;
+$main-font-family: 'Domine', serif;
 $body-font-family: $main-font-family;
 
 // font sizes
 $font-size-base: 16px;
-$font-size-small: $font-size-base - 6px;
-$font-size-large: $font-size-base + 6px;
+$font-size-small: $font-size-base - 2px;
+$font-size-large: $font-size-base + 2px;
 $font-size-h1: $font-size-base + 15px;
 $font-size-h2: $font-size-base + 12px;
 $font-size-h3: $font-size-base + 9px;
@@ -20,59 +19,51 @@ $font-size-h5: $font-size-base + 3px;
 $font-size-h6: $font-size-base;
 
 // colors
-$color-plugging: #0B110D;
-$color-scary-water: #2C4D56;
-$color-sunset-dock: #C3AA72;
-$color-sky-warning: #DC7612;
-$color-sailors-warning: #BD3200;
+$dark-alley: #1A1717;
+$berlin-red: #C41010;
+$black-zebra: #1F1A1A;
+$sorta-grey: #332E2E;
+$wine: #A10D0D;
 
 // components colors
-$color-primary: $color-scary-water;
-$color-secondary: $color-sky-warning;
-$main-text-color: $color-plugging;
+$color-primary: $dark-alley;
+$color-secondary: $berlin-red;
+$main-text-color: $black-zebra;
 $header-text-color: white;
-$body-background-color: white;
+$body-background-color: #F8F8F8;
 
 
-// override bootstrap variables
+// bootstrap basics
+$border-radius-base: 0;
+$headings-font-family: $titles-font-family;
+$headings-color: $main-text-color;
 
-// breakpoints
-$screen-md: $large-screen-width;
-$screen-sm: $medium-screen-width;
+// Media queries breakpoints
+$screen-xs-max: ($medium-screen-width - 1);
+$screen-sm-min: $medium-screen-width;
+$screen-sm-max: ($large-screen-width - 1);
+$screen-md-min: $large-screen-width;
 
-// inverted navbar
-// reset inverted navbar basics
-$navbar-inverse-color: $header-text-color;
-$navbar-inverse-bg: $color-primary;
-$navbar-inverse-border: $color-primary;
+// Basics of a navbar
+$navbar-height: 80px;
+$navbar-default-color: $header-text-color;
+$navbar-default-bg: $color-primary;
 
-// inverted navbar links
-$navbar-inverse-link-color: $navbar-inverse-color;
-$navbar-inverse-link-hover-color: $navbar-inverse-color;
-$navbar-inverse-link-hover-bg: $color-secondary;
-$navbar-inverse-link-active-color: $navbar-inverse-link-hover-color;
-$navbar-inverse-link-active-bg: darken($navbar-inverse-bg, 10%);
-$navbar-inverse-link-disabled-color: #444;
-$navbar-inverse-link-disabled-bg: transparent;
+// Navbar links
+$navbar-default-link-color: $navbar-default-color;
+$navbar-default-link-hover-color: $navbar-default-color;
+$navbar-default-link-hover-bg: $color-secondary;
+$navbar-default-link-active-color: $navbar-default-color;
+$navbar-default-link-active-bg: $color-secondary;
 
-// inverted navbar brand label
-$navbar-inverse-brand-color: $navbar-inverse-color;
-$navbar-inverse-brand-hover-color: $navbar-inverse-color;
-$navbar-inverse-brand-hover-bg: transparent;
+// Navbar toggle
+$navbar-default-toggle-hover-bg: $navbar-default-color;
+$navbar-default-toggle-icon-bar-bg: $navbar-default-color;
+$navbar-default-toggle-border-color: $navbar-default-color;
 
-// inverted navbar toggle
-$navbar-inverse-toggle-hover-bg: transparent;
-$navbar-inverse-toggle-icon-bar-bg: white;
-$navbar-inverse-toggle-border-color: transparent;
+// Navbar brand label
+$navbar-default-brand-hover-color: $navbar-default-color;
 
-// hamburger
-$hamburger-padding-x                       : 15px;
-$hamburger-padding-y                       : 13px;
-$hamburger-layer-width                     : 24px;
-$hamburger-layer-height                    : 2px;
-$hamburger-layer-spacing                   : 6px;
-$hamburger-layer-color                     : white;
-$hamburger-layer-border-radius             : 2px;
-$hamburger-types: (
-  collapse,
-);
+// Navbar toggle
+$navbar-default-toggle-hover-bg: transparent;
+$navbar-default-toggle-border-color: transparent;

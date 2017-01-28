@@ -1,8 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: $body-background-color;
     color: $main-text-color;
     font-family: $main-font-family;
     font-size: $font-size-base;
-	margin: 0;
-	padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $titles-font-family;
+}
+
+a {
+    &:link, &:visited, &:hover, &:active {
+        text-decoration: none;
+    }
 }

@@ -3,44 +3,83 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Miedum</title>
+    <title>Top Ten Movies</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="dist/style.css">
 </head>
 
 <body>
     <header class="web-header">
-        <nav class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed hamburger hamburger--collapse" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="hamburger-box">
-                            <span class="hamburger-inner"></span>
-                        </span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand web-title" href="#">Miedum</a>
+                    <a class="navbar-brand" href="#">
+                        <!-- TODO - Pasar la imagen a dist -->
+                        <img alt="Brand" src="src/img/t10movies.png">
+                    </a>
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Ciencia <span class="sr-only">(current)</span></a></li>
-                        <li><a href="#">Cine y TV</a></li>
-                        <li><a href="#">Deportes</a></li>
-                        <li><a href="#">Música</a></li>
-                        <li><a href="#">Política y Economía</a></li>
+                        <li><a href="#">Acción y Aventuras</a></li>
+                        <li><a href="#">Ciencia Ficción</a></li>
+                        <li><a href="#">Comedia</a></li>
+                        <li><a href="#">Drama</a></li>
+                        <li><a href="#">Suspense</a></li>
+                        <li class="active"><a href="#">Terror</a></li>
                     </ul>
                     <form class="navbar-form navbar-right">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Buscar">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <button type="submit" class="btn btn-default">Submit</button>
                         </div>
-                        <button type="submit" class="btn btn-default">Submit</button>
                     </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <button type="button" class="btn btn-default navbar-btn">Sign in</button>
+                        <button type="button" class="btn btn-default navbar-btn">Sign up</button>
+                    </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js"></script>
-    <script src="src/js/ready.js"></script>
+    <section class="articles-list">
+        <article class="article">
+            <header class="article-header">
+                <a href="#" class="article-author-avatar">
+                    <img src="src/img/author-01.jpg" alt="Ir al perfil del autor">
+                </a>
+                <a href="#" class="article-author-name">Javier Carmona
+                </a>
+                <div class="article-date">
+                    <time datetime="2017-01-20T22:56:14.042Z">Jan 20</time>
+                </div>
+            </header>
+            <a href="">
+                <div class="article-content">
+                    <h3 class="article-title">The Exorcist</h3>
+                    <figure class="article-media">
+                        <img src="src/img/movie-01.jpg" alt="">
+                    </figure>
+                    <p class="article-text">Adaptación de la novela de William Peter Blatty que se inspiró en un exorcismo real ocurrido en Washington en 1949. Regan, una niña de doce años, es víctima de fenómenos paranormales como la levitación o la manifestación de una fuerza sobrehumana. Su madre, aterrorizada, tras someter a su hija a múltiples análisis médicos que no ofrecen ningún resultado, acude a un sacerdote con estudios de psiquiatría. Éste, convencido de que el mal no es físico sino espiritual, es decir que se trata de una posesión diabólica, decide practicar un exorcismo. Seguramente la película de terror más popular de todos los tiempos.</p>
+                </div>
+            </a>
+            <footer class="article-footer">
+                <div class="article-likes">
+                    <button>+</button>
+                    <span>223</span>
+                </div>
+                <div class="article-comments">
+                    <a href="">226 comentarios</a>
+                </div>
+            </footer>
+        </article>
+    </section>
+    <script src="dist/main.js"></script>
     </script>
 </body>
 

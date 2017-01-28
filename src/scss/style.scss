@@ -1,6 +1,10 @@
-@import url("https://fonts.googleapis.com/css?family=Average|Fjalla+One");
+@import url('https://fonts.googleapis.com/css?family=Domine|Montserrat');
+
 @import "variables";
-@import 'bootstrap.scss';
-@import 'hamburgers';
+@import 'bootstrap';
+
 @import "html-tags";
+
 @import "web-header";
+
+@import "movies-list"
