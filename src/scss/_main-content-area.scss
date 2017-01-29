@@ -32,15 +32,74 @@
                 justify-content: space-between;
             }
             .article {
-                background-color: red;
+                position: relative;
+                background-color: white;
                 margin-bottom: 30px;
                 width: 100%;
-                height: 500px;
                 @include if-is-medium-screen {
-                	width: calc(50% - 10px);
+                    width: calc(50% - 10px);
                 }
                 @include if-is-large-screen {
-                	width: calc(100%/3 - 20px);
+                    width: calc(100%/3 - 20px);
+                }
+                .article-header {
+                    position: relative;
+                    img, iframe {
+                        width: 100%;
+                        display: inherit;
+                    }
+                    .article-tag {
+                        position: absolute;
+                        top: 5px;
+                        right: 5px;
+                        padding: 0 8px;
+                        color: white;
+                        background-color: $color-primary;
+                        font-size: 11px;
+                        font-weight: 400;
+                        line-height: 30px;
+                        text-align: center;
+                        text-transform: uppercase;
+                        &:hover {
+                            color: $color-secondary;
+                        }
+                    }
+                }
+                .article-content {
+                    padding: 30px 35px;
+                    text-align: center;
+                    @include if-is-medium-screen {
+                        padding: 30px 14px;
+                    }
+                    @include if-is-large-screen {
+                        padding: 30px 20px;
+                    }
+                    .article-title {
+                        a {
+                            color: $color-primary;
+                            &:hover {
+                                color: $color-secondary;
+                            }
+                        }
+                    }
+                    .continue-link {
+                        color: $color-secondary;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .article-footer {
+                    padding: 10px 20px;                    
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    .article-likes, .article-comments {
+                        display: inline-block;
+                    }
+                }
+                &:hover {
+                    box-shadow: 0px 1px 4px darken($body-background-color, 10%);
                 }
             }
         }

@@ -3,7 +3,7 @@ $header-text-color: white;
 // style
 .header-area {
     .header-top {
-        background: $color-primary none repeat scroll 0 0;
+        background-color: $color-primary;
         .header-top-container {
             @extend .container;
             @include if-is-medium-screen {
@@ -91,7 +91,7 @@ $header-text-color: white;
         }
     }
     .header-bottom {
-        background: white repeat scroll 0 0;
+        background-color: white;
         box-shadow: 0px 1px 4px darken($body-background-color, 10%);
         z-index: 100;
         .header-bottom-container {

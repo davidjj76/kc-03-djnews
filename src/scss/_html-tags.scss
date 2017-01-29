@@ -58,13 +58,27 @@ h6 {
     font-size: $font-size-h6;
 }
 
-a {
-    transition: all 0.4s ease 0s;
-    text-decoration: none;
-    &:hover,
-    &:focus {
+h1,
+h2,
+h4,
+h5,
+h6 {
+    color: $color-primary;
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+body {
+    a {
+        transition: all 0.4s ease 0s;
         text-decoration: none;
-        outline: 0 none;
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+        &:hover {
+            color: $color-secondary;
+        }
     }
 }
 
