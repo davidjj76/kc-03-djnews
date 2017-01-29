@@ -17,7 +17,7 @@ var sassConfig = {
 	watchFiles: './src/scss/*.scss',
 	entryPoint: './src/scss/style.scss',
 	dest: './dist/',
-	includePaths: ['node_modules/bootstrap-sass/assets/stylesheets', 'node_modules/hamburgers/_sass/hamburgers']
+	includePaths: []
 };
 
 // js task

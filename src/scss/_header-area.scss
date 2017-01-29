@@ -1,0 +1,184 @@
+// variables
+$header-text-color: white;
+// style
+.header-area {
+    .header-top {
+        background: $color-primary none repeat scroll 0 0;
+        .header-top-container {
+            max-width: $small-screen-container-width;
+            margin: 0 auto;
+            @include if-is-medium-screen {
+                max-width: $medium-screen-container-width;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            @include if-is-large-screen {
+                max-width: $large-screen-container-width;
+            }
+            .header-top-left {
+                .social-icons {
+                    display: flex;
+                    justify-content: center;
+                    li {
+                        margin-right: 1px;
+                        i {
+                            color: $header-text-color;
+                            width: 35px;
+                            height: 40px;
+                            line-height: 40px;
+                            text-align: center;
+                            transition: all 0.4s ease 0s;
+                            &:hover {
+                                color: $color-secondary;
+                            }
+                        }
+                    }
+                }
+            }
+            .header-top-right {
+                margin-top: 8px;
+                @include if-is-medium-screen {
+                    display: flex;
+                    flex-direction: row;
+                }
+                .header-links,
+                .header-search {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    @include if-is-medium-screen {
+                        display: block;
+                    }
+                }
+                .header-links {
+                    @include if-is-medium-screen {
+                        order: 2;
+                    }
+                    li {
+                        display: inline-block;
+                        border-left: 1px solid $body-text-color;
+                        padding: 0 20px;
+                        &:nth-child(2) {
+                            padding-right: 0;
+                            @include if-is-medium-screen {
+                                padding: 0 20px;
+                            }
+                        }
+                        a {
+                            color: $header-text-color;
+                            font-size: 14px;
+                            &:hover {
+                                color: $color-secondary;
+                            }
+                        }
+                    }
+                }
+                .header-search {
+                    @include if-is-medium-screen {
+                        order: 1;
+                    }
+                    .search-toggler {
+                        background: none;
+                        color: $header-text-color;
+                        border: none;
+                        font-size: 14px;
+                        outline: 0;
+                        padding: 0 20px;
+                        transition: all 0.4s ease 0s;
+                        &:hover {
+                            color: $color-secondary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .header-bottom {
+        background: white repeat scroll 0 0;
+        box-shadow: 0px 1px 4px darken($body-background-color, 10%);
+        .header-bottom-container {
+            max-width: $small-screen-container-width;
+            margin: 0 auto;
+            @include if-is-medium-screen {
+                max-width: $medium-screen-container-width;
+            }
+            @include if-is-large-screen {
+                max-width: $large-screen-container-width;
+            }
+            .navbar {
+                width: 100%;
+                padding-bottom: 20px;
+                @include if-is-large-screen {
+                    padding-bottom: 0;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .logo {
+                    padding: 10px 0 5px 0;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    @include if-is-large-screen {
+                        display: block;
+                    }
+                }
+                .navbar-mobile {
+                    height: 40px;
+                    background-color: $color-secondary;
+                    @include if-is-medium-screen {
+                        display: none;
+                    }
+                    #menu-toggle {
+                        float: right;
+                        margin: 7px 10px 0 0;
+                        color: $header-text-color;
+                    }
+                }
+                ul {
+                    display: none;
+                    li {
+                        margin-left: 5px;
+                        a {
+                            color: #666;
+                            font-size: 14px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            padding: 0 15px;
+                            &:hover {
+                                color: $color-secondary;
+                            }
+                        }
+                    }
+                    &.menu-mobile-shown {
+                        display: block;
+                        border-bottom: 5px solid $color-secondary;
+                        li {
+                            margin-right: 5px;
+                            text-align: center;
+                            padding: 10px;
+                        }
+                        @include if-is-medium-screen {
+                            border-bottom: 0;
+                            display: flex;
+                            justify-content: space-around;
+                        }
+                        @include if-is-large-screen {
+                            border-bottom: 0;
+                            justify-content: flex-end;
+                            align-items: center;
+                        }
+                    }
+                    @include if-is-medium-screen {
+                        display: flex;
+                        justify-content: space-around;
+                    }
+                    @include if-is-large-screen {
+                        justify-content: flex-end;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+    }
+}

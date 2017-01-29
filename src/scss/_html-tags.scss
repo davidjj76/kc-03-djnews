@@ -1,14 +1,17 @@
 * {
     box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-body {
-    background: $body-background-color;
-    color: $main-text-color;
-    font-family: $main-font-family;
-    font-size: $font-size-base;
+img {
+    max-width: 100%;
+    height: auto
 }
 
 h1,
@@ -17,11 +20,55 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $titles-font-family;
+    color: $color-primary;
+    margin: 0 0 10px;
+}
+
+ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background: $body-background-color none repeat scroll 0 0;
+    color: $body-text-color;
+    font-family: $body-font-family;
+    font-size: $font-size-base;
+    line-height: 24px;
+}
+
+h1 {
+    font-size: $font-size-h1;
+}
+
+h2 {
+    font-size: $font-size-h2;
+}
+
+h4 {
+    font-size: $font-size-h4;
+}
+
+h5 {
+    font-size: $font-size-h5;
+}
+
+h6 {
+    font-size: $font-size-h6;
 }
 
 a {
-    &:link, &:visited, &:hover, &:active {
+    transition: all 0.4s ease 0s;
+    text-decoration: none;
+    &:hover,
+    &:focus {
         text-decoration: none;
+        outline: 0 none;
     }
+}
+
+p {
+    font-weight: 300;
+    margin: 0 0 15px;
 }

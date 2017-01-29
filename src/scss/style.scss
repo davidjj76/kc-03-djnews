@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Domine|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
 
 @import "variables";
-@import 'bootstrap';
-
+@import "utils";
 @import "html-tags";
-
-@import "web-header";
-
-@import "movies-list"
+@import "header-area";
