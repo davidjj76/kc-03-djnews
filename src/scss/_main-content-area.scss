@@ -1,0 +1,47 @@
+    // variables
+    // style
+    .main-content-area {
+        padding: 60px 0 0;
+        .main-content-container {
+            @extend .container;
+        }
+        .section-title {
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 30px;
+            padding: 0 0 8px;
+            font-weight: 500;
+            line-height: 1.1;
+            position: relative;
+            &:after {
+                content: "";
+                background-color: $color-secondary;
+                width: 150px;
+                height: 2px;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                margin-left: -75px;
+            }
+        }
+        .articles-list {
+            display: block;
+            @include if-is-medium-screen {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .article {
+                background-color: red;
+                margin-bottom: 30px;
+                width: 100%;
+                height: 500px;
+                @include if-is-medium-screen {
+                	width: calc(50% - 10px);
+                }
+                @include if-is-large-screen {
+                	width: calc(100%/3 - 20px);
+                }
+            }
+        }
+    }

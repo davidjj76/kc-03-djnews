@@ -21,3 +21,22 @@
 		@content;
 	}
 }
+
+.fixed {
+	position:fixed;
+	top:0; 
+	left:0;
+	width: 100%;
+}
+
+.container {
+    max-width: $small-screen-container-width;
+    margin: 0 auto;
+    @include if-is-medium-screen {
+        max-width: $medium-screen-container-width;
+    }
+    @include if-is-large-screen {
+        max-width: $large-screen-container-width;
+    }	
+}
+

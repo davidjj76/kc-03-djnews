@@ -5,16 +5,11 @@ $header-text-color: white;
     .header-top {
         background: $color-primary none repeat scroll 0 0;
         .header-top-container {
-            max-width: $small-screen-container-width;
-            margin: 0 auto;
+            @extend .container;
             @include if-is-medium-screen {
-                max-width: $medium-screen-container-width;
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-            }
-            @include if-is-large-screen {
-                max-width: $large-screen-container-width;
             }
             .header-top-left {
                 .social-icons {
@@ -86,6 +81,7 @@ $header-text-color: white;
                         outline: 0;
                         padding: 0 20px;
                         transition: all 0.4s ease 0s;
+                        cursor: pointer;
                         &:hover {
                             color: $color-secondary;
                         }
@@ -97,15 +93,9 @@ $header-text-color: white;
     .header-bottom {
         background: white repeat scroll 0 0;
         box-shadow: 0px 1px 4px darken($body-background-color, 10%);
+        z-index: 100;
         .header-bottom-container {
-            max-width: $small-screen-container-width;
-            margin: 0 auto;
-            @include if-is-medium-screen {
-                max-width: $medium-screen-container-width;
-            }
-            @include if-is-large-screen {
-                max-width: $large-screen-container-width;
-            }
+            @extend .container;
             .navbar {
                 width: 100%;
                 padding-bottom: 20px;
