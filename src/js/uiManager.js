@@ -35,6 +35,7 @@ module.exports = {
             this.searchShown = false;
         } else {
             $('.search-area').fadeIn();
+            $('.search-area input').focus();
             this.searchShown = true;
         }
     },

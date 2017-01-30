@@ -46,7 +46,29 @@ var uglifyConfig = {
 var imagesConfig = {
 	imagesTaskName: 'optimize-images',
 	src: 'src/img/*',
-	dest: './dist/img'
+	dest: './dist/img',
+	responsive: {
+		'user-*.jpg': [{
+			width: 60,
+			rename: { suffix: '-60px' }
+		}],
+		'new-*.jpg': [{
+			width: 420,
+			rename: { suffix: '-420px' }
+		}, {
+			width: 375,
+			rename: { suffix: '-375px' }
+		}, {
+			width: 300,
+			rename: { suffix: '-300px' }
+		}],
+		'footer-bg.jpg': [{
+			format: 'png'
+		}],
+		'logo.png': [{
+			format: 'png'
+		}]
+	}
 }
 
 // icons task
@@ -126,6 +148,7 @@ gulp.task(uglifyConfig.uglifyTaskName, function() {
 // optimize images
 gulp.task(imagesConfig.imagesTaskName, function() {
 	gulp.src(imagesConfig.src)
+	.pipe(responsive(imagesConfig.responsive))
 	.pipe(imagemin())
 	.pipe(gulp.dest(imagesConfig.dest))
 });

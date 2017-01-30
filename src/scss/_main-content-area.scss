@@ -129,9 +129,6 @@
                             cursor: pointer;
                             display: flex;
                             align-items: center;
-                            &:focus {
-                                outline: 0;
-                            }
                             span.likes {
                                 font-size: 16px;
                                 margin-left: 8px;
@@ -142,6 +139,26 @@
                 &:hover {
                     box-shadow: 0px 1px 4px darken($body-background-color, 10%);
                 }
+            }
+        }
+        .pagination-area {
+            @extend .container;
+            display: flex;
+            justify-content: space-between;
+            @include if-is-medium-screen {
+                justify-content: space-around;
+            }
+            padding: 40px 0;
+            button {
+                background: $color-secondary;
+                color: white;
+                width: 150px;
+                height: 50px;
+                font-size: 16px;
+                text-align: center;
+                border: none;
+                cursor: pointer;
+                text-transform: small-caps;
             }
         }
     }
