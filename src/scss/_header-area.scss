@@ -73,7 +73,7 @@ $header-text-color: white;
                     @include if-is-medium-screen {
                         order: 1;
                     }
-                    .search-toggler {
+                    .search-toggle {
                         background: none;
                         color: $header-text-color;
                         border: none;

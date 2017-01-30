@@ -4,6 +4,7 @@ module.exports = {
 
     menuMobileShown: false,
     headerFixed: false,
+    searchShown: false,
 
     fixHeader: function() {
         var height = $('.header-top').height();
@@ -28,6 +29,16 @@ module.exports = {
         }
     },
 
+    toggleSearch: function() {
+        if (this.searchShown) {
+            $('.search-area').fadeOut();
+            this.searchShown = false;
+        } else {
+            $('.search-area').fadeIn();
+            this.searchShown = true;
+        }
+    },
+
     showScrollUp: function() {
         if (this.headerFixed) {
             $('#scrollUp').fadeIn();
@@ -39,5 +50,7 @@ module.exports = {
     scrollUp: function() {
         $('body').animate({scrollTop : 0}, 800);
     }
+
+
 
 }

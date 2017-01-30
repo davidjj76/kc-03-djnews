@@ -14,6 +14,14 @@ $(document).ready(function() {
 		uiManager.toggleMobileMenu();
 	});
 
+	$('.search-toggle').click(function() {
+		uiManager.toggleSearch();
+	});
+
+	$('.search-close').click(function() {
+		uiManager.toggleSearch();
+	});
+
 	$('#scrollUp').click(function(){
 		uiManager.scrollUp();
 	});
