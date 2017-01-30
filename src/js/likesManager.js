@@ -17,8 +17,8 @@ module.exports = {
 				function(likes) {
 					renderLikes(article, likes);
 				}, 
-				function() {
-					console.warn("No existe la clave del articulo " + articleId);
+				function(error) {
+					console.err(err);
 				}
 			)
 		}
@@ -31,8 +31,8 @@ module.exports = {
 			function(likes) {
 				renderLikes(article, likes);
 			}, 
-			function() {
-				console.warn("No existe la clave del articulo " + articleId);
+			function(error) {
+					console.err(error);
 			}
 		)
 	},

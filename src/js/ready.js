@@ -1,7 +1,7 @@
 var $ = require('jquery');
 var uiManager = require('./uiManager');
 var likesManager = require('./likesManager');
-var datesService = require('./datesService');
+var datesManager = require('./datesManager');
 
 $(document).ready(function() {
 
@@ -23,5 +23,9 @@ $(document).ready(function() {
 	});
 
 	likesManager.loadLikes($('.button-like'));
+
+	setInterval(function() {
+		datesManager.loadDates($('time.article-date'));
+	}, 1000);
 
 });

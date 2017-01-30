@@ -111,9 +111,13 @@
                             width: 60px;
                             border-radius: 50%;
                         }
-                        a {
-                            padding-left: 10px;
-                            flex-grow: 1;
+                        .author-wrapper {
+                            display: flex;
+                            flex-direction: column;
+                            padding-left: 15px;
+                            a {
+                                font-weight: 600;
+                            }
                         }
                     }
                     .article-actions {
