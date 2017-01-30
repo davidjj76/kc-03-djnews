@@ -32,7 +32,8 @@
                 justify-content: space-between;
             }
             .article {
-                position: relative;
+                display: flex;
+                flex-direction: column;
                 background-color: white;
                 margin-bottom: 30px;
                 width: 100%;
@@ -44,7 +45,8 @@
                 }
                 .article-header {
                     position: relative;
-                    img, iframe {
+                    img,
+                    iframe {
                         width: 100%;
                         display: inherit;
                     }
@@ -90,12 +92,31 @@
                     }
                 }
                 .article-footer {
-                    padding: 10px 20px;                    
-                    position: absolute;
-                    width: 100%;
-                    bottom: 0;
-                    .article-likes, .article-comments {
-                        display: inline-block;
+                    margin-top: auto;
+                    margin-bottom: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 0 30px;
+                    a,
+                    button {
+                        color: $body-text-color;
+                        &:hover {
+                            color: $color-secondary;
+                        }
+                    }
+                    .button-like {
+                        background-color: transparent;
+                        border: none;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        &:focus {
+                            outline: 0;
+                        }
+                        span.likes {
+                            font-size: 16px;
+                            margin-left: 8px;
+                        }
                     }
                 }
                 &:hover {

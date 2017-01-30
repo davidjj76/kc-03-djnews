@@ -1,5 +1,7 @@
 var $ = require('jquery');
 var uiManager = require('./uiManager');
+var likesManager = require('./likesManager');
+var datesService = require('./datesService');
 
 $(document).ready(function() {
 
@@ -15,5 +17,11 @@ $(document).ready(function() {
 	$('#scrollUp').click(function(){
 		uiManager.scrollUp();
 	});
+
+	$('.button-like').click(function(){
+		likesManager.addLike(this);
+	});
+
+	likesManager.loadLikes($('.button-like'));
 
 });
