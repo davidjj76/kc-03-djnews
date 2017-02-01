@@ -102,38 +102,9 @@
                             color: $color-secondary;
                         }
                     }
-                    .article-author {
-                        display: flex;
-                        justify-content: flex-start;
-                        align-items: center;
-                        margin-bottom: 20px;
-                        img {
-                            width: 60px;
-                            border-radius: 50%;
-                        }
-                        .author-wrapper {
-                            display: flex;
-                            flex-direction: column;
-                            padding-left: 15px;
-                            a {
-                                font-weight: 600;
-                            }
-                        }
-                    }
                     .article-actions {
                         display: flex;
                         justify-content: space-between;
-                        .button-like {
-                            background-color: transparent;
-                            border: none;
-                            cursor: pointer;
-                            display: flex;
-                            align-items: center;
-                            span.likes {
-                                font-size: 16px;
-                                margin-left: 8px;
-                            }
-                        }
                     }
                 }
                 &:hover {
@@ -160,5 +131,45 @@
                 cursor: pointer;
                 text-transform: small-caps;
             }
+        }
+    }
+    
+    .article-author {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+        img {
+            width: 60px;
+            border-radius: 50%;
+        }
+        .author-wrapper {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding-left: 15px;
+            a {
+                color: $body-text-color;
+                font-weight: 600;
+                &:hover {
+                    color: $color-secondary;
+                }
+            }
+        }
+    }
+    
+    .button-like {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        span.likes {
+            font-size: 16px;
+            margin-left: 8px;
+        }
+        color: $body-text-color;
+        &:hover {
+            color: $color-secondary;
         }
     }

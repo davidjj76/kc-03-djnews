@@ -1,0 +1,42 @@
+.article-detail {
+    p,
+    q {
+        text-align: justify;
+        color: $color-primary;
+        font-size: 14px;
+    }
+    q {
+    	display: inline-block;
+        margin-bottom: 15px;
+        cite {
+            font-weight: 600;
+        }
+    }
+    a {
+        color: $color-secondary;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .article-picture {
+        margin: 15px 0;
+        .article-picture-caption {
+            p {
+                color: $body-text-color;
+                font-size: 13px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+// TODO
+.hideme {
+	height: 200px;
+	width: 200px;
+	margin-left: -200px;
+	opacity: 0;
+	background-color: $color-secondary;
+	color: white;
+}

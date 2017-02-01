@@ -92,3 +92,8 @@ button {
         outline: 0;
     }
 }
+
+::selection {
+    color: white;
+    background: $color-secondary; 
+} 

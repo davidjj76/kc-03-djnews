@@ -19,7 +19,7 @@ var responsive = require('gulp-responsive');
 
 // sass compile configuration
 var sassConfig = {
-	compileSassTaskName: 'compile-sass',
+	taskName: 'compile-sass',
 	watchFiles: './src/scss/*.scss',
 	entryPoint: './src/scss/style.scss',
 	dest: './dist/',
@@ -28,7 +28,7 @@ var sassConfig = {
 
 // js task
 var jsConfig = {
-	concatJsTaskName: 'concat-js',
+	taskName: 'concat-js',
 	watchFiles: './src/js/*.js',
 	entryPoint: './src/js/main.js',
 	concatFile: 'main.js',
@@ -37,14 +37,14 @@ var jsConfig = {
 
 // minify js task
 var uglifyConfig = {
-	uglifyTaskName: 'uglify',
+	taskName: 'uglify',
 	src: './dist/main.js',
 	dest: './dist/'	
 };
 
 // images task
 var imagesConfig = {
-	imagesTaskName: 'optimize-images',
+	taskName: 'optimize-images',
 	src: 'src/img/*',
 	dest: './dist/img',
 	responsive: {
@@ -62,18 +62,30 @@ var imagesConfig = {
 			width: 300,
 			rename: { suffix: '-300px' }
 		}],
-		'footer-bg.jpg': [{
-			format: 'png'
-		}],
-		'logo.png': [{
-			format: 'png'
+		'det-*.jpg': [{
+			withoutEnlargement: false,
+			width: 960,
+			rename: { suffix: '-960px' }
+		}, {
+			withoutEnlargement: false,
+			width: 768,
+			rename: { suffix: '-768px' }
+		}, {
+			width: 420,
+			rename: { suffix: '-420px' }
+		}, {
+			width: 375,
+			rename: { suffix: '-375px' }
+		}, {
+			width: 300,
+			rename: { suffix: '-300px' }
 		}]
 	}
 }
 
 // icons task
 var iconsConfig = {
-	iconsTaskName: 'icons',
+	taskName: 'icons',
 	src: 'node_modules/font-awesome/fonts/**.*',
 	dest: './dist/fonts'
 }
@@ -81,10 +93,10 @@ var iconsConfig = {
 
 // default task
 gulp.task('default', [
-	sassConfig.compileSassTaskName, 
-	jsConfig.concatJsTaskName, 
-	imagesConfig.imagesTaskName,
-	iconsConfig.iconsTaskName,
+	sassConfig.taskName, 
+	jsConfig.taskName, 
+	imagesConfig.taskName,
+	iconsConfig.taskName,
 	], function() {
 
 		// start browser sync server
@@ -93,10 +105,10 @@ gulp.task('default', [
 		});
 
 		// watch scss files changes and compile
-	    gulp.watch(sassConfig.watchFiles, [sassConfig.compileSassTaskName]);
+	    gulp.watch(sassConfig.watchFiles, [sassConfig.taskName]);
 
 	    // watch js files changes and concatenate
-	    gulp.watch(jsConfig.watchFiles, [jsConfig.concatJsTaskName]);
+	    gulp.watch(jsConfig.watchFiles, [jsConfig.taskName]);
 
 	    // watch html files changes and reload server
 	    gulp.watch('./*.html', function() {
@@ -107,7 +119,7 @@ gulp.task('default', [
 );
 
 // sass compile task
-gulp.task(sassConfig.compileSassTaskName, function() {
+gulp.task(sassConfig.taskName, function() {
 	gulp.src(sassConfig.entryPoint)
 	.pipe(sourcemaps.init())
 	.pipe(sass({ includePaths: sassConfig.includePaths }).on('error', function(error) {
@@ -121,7 +133,7 @@ gulp.task(sassConfig.compileSassTaskName, function() {
 });
 
 // js concatenate task
-gulp.task(jsConfig.concatJsTaskName, function() {
+gulp.task(jsConfig.taskName, function() {
 	gulp.src(jsConfig.entryPoint)
 	.pipe(tap(function(file) {
 		file.contents = browserify(file.path, { debug: true }).bundle().on('error', function(error) {
@@ -137,7 +149,7 @@ gulp.task(jsConfig.concatJsTaskName, function() {
 });
 
 // minify js
-gulp.task(uglifyConfig.uglifyTaskName, function() {
+gulp.task(uglifyConfig.taskName, function() {
 	gulp.src(uglifyConfig.src)
 	.pipe(uglify())
 	.pipe(gulp.dest(uglifyConfig.dest))
@@ -145,15 +157,15 @@ gulp.task(uglifyConfig.uglifyTaskName, function() {
 });
 
 // optimize images
-gulp.task(imagesConfig.imagesTaskName, function() {
+gulp.task(imagesConfig.taskName, function() {
 	gulp.src(imagesConfig.src)
-	.pipe(responsive(imagesConfig.responsive))
+	.pipe(responsive(imagesConfig.responsive, { errorOnUnusedImage: false, passThroughUnused: true }))
 	.pipe(imagemin())
 	.pipe(gulp.dest(imagesConfig.dest))
 });
 
 // font awesome icons
-gulp.task(iconsConfig.iconsTaskName, function() {
+gulp.task(iconsConfig.taskName, function() {
 	gulp.src(iconsConfig.src)
     .pipe(gulp.dest(iconsConfig.dest));
 });
