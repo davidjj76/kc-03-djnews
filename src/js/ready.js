@@ -2,6 +2,7 @@ var $ = require('jquery');
 var uiManager = require('./uiManager');
 var likesManager = require('./likesManager');
 var datesManager = require('./datesManager');
+var commentsManager = require('./commentsManager');
 
 $(document).ready(function() {
 
@@ -14,11 +15,7 @@ $(document).ready(function() {
         uiManager.toggleMobileMenu();
     });
 
-    $('.search-toggle').click(function() {
-        uiManager.toggleSearch();
-    });
-
-    $('.search-close').click(function() {
+    $('.search-toggle, .search-close').click(function() {
         uiManager.toggleSearch();
     });
 
@@ -31,6 +28,7 @@ $(document).ready(function() {
     });
 
     likesManager.loadLikes($('.button-like'));
+    commentsManager.loadComments($('.link-comments'));
 
     setInterval(function() {
         datesManager.loadDates($('time.article-date'));
@@ -38,13 +36,19 @@ $(document).ready(function() {
 
    	// TODO
     $(window).scroll(function() {
-        $('.hideme').each(function(i) {
+        $('.comment').each(function() {
             var objectBottom = $(this).offset().top + $(this).outerHeight();
             var windowBottom = $(window).scrollTop() + $(window).height();
             if (windowBottom > objectBottom) {
-                $(this).animate({ 'opacity': '1', 'margin-left': 0 }, 500);
+                var animation = { 'opacity': '1', 'margin-left': '0' };
+                $(this).animate(animation, 500);
             }
         });
+    });
+
+    $('.new-comment-form').on('submit', function(event) {
+        commentsManager.addComment(this);
+        event.preventDefault();
     });
 
 });

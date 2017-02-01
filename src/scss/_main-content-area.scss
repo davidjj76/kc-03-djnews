@@ -105,6 +105,16 @@
                     .article-actions {
                         display: flex;
                         justify-content: space-between;
+                        .link-comments {
+                            display: inline-flex;
+                            text-align: center;
+                            span {
+                                font-size: 16px;
+                                font-weight: 600;
+                                text-align: right;
+                                margin-right: 4px;
+                            }
+                        }
                     }
                 }
                 &:hover {
@@ -162,14 +172,16 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
-        display: flex;
-        align-items: center;
-        span.likes {
-            font-size: 16px;
-            margin-left: 8px;
-        }
         color: $body-text-color;
         &:hover {
             color: $color-secondary;
+        }
+        .button-wrapper {
+            display: flex;
+            align-items: center;
+            span.likes {
+                font-size: 16px;
+                margin-left: 4px;
+            }
         }
     }

@@ -1,11 +1,6 @@
 var likesService = require('./likesService');
 var $ = require('jquery');
 
-function renderLikes(article, likes) {
-	var likesText = likes == 0 ? '' : '(' + likes + ')';
-	$(article).find('span').text(likesText);
-}
-
 module.exports = {
 
 	loadLikes: function(articles) {
@@ -15,10 +10,9 @@ module.exports = {
 			articleId = $(article).data('articleId');
 			likesService.get(articleId, 
 				function(likes) {
-					renderLikes(article, likes);
+					self.renderLikes(article, likes);
 				}, 
 				function(error) {
-					console.err(err);
 				}
 			)
 		}
@@ -29,12 +23,16 @@ module.exports = {
 		articleId = $(article).data('articleId');
 		likesService.add(articleId, 
 			function(likes) {
-				renderLikes(article, likes);
+				self.renderLikes(article, likes);
 			}, 
 			function(error) {
-					console.err(error);
 			}
 		)
 	},
+
+	renderLikes: function(article, likes) {
+		var likesText = likes == 0 ? '' : '(' + likes + ')';
+		$(article).find('span').text(likesText);
+	}
 
 }

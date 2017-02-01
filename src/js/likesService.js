@@ -10,6 +10,7 @@ module.exports = {
         }
         catch(error) {
             errorCallback(error);
+            console.error("likesService: ", error);
         }
     },
 
@@ -23,6 +24,7 @@ module.exports = {
         }
         catch(error) {
             errorCallback(error);
+            console.error("likesService: ", error);
         }
     }
 

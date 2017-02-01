@@ -52,6 +52,4 @@ module.exports = {
         $('body, html').animate({scrollTop : 0}, 800);
     }
 
-
-
 }

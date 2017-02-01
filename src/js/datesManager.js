@@ -1,13 +1,6 @@
 var datesService = require('./datesService');
 var $ = require('jquery');
 
-function renderDate(element, date) {
-	var previousDate = $(element).html();
-	if (previousDate != date) {
-		$(element).html(date);		
-	}
-}
-
 module.exports = {
 
 	loadDates: function(elements) {
@@ -17,13 +10,19 @@ module.exports = {
 			var date = $(element).attr('datetime');
 			datesService.formatDate(date, 
 				function(formatedDate) {
-					renderDate(element, formatedDate);
+					self.renderDate(element, formatedDate);
 				}, 
 				function(error) {
-					console.error(error);
 				}
 			)
 		}
 	},
+
+	renderDate: function (element, date) {
+		var previousDate = $(element).html();
+		if (previousDate != date) {
+			$(element).html(date);		
+		}
+	}
 
 }

@@ -32,11 +32,19 @@
 }
 
 // TODO
-.hideme {
+.comment {
 	height: 200px;
-	width: 200px;
-	margin-left: -200px;
+	width: 100%;
 	opacity: 0;
 	background-color: $color-secondary;
 	color: white;
+}
+
+.left {
+    margin-left: -500px;
+    text-align: left;
+}
+.right {
+    margin-left: 500px;
+    text-align: right;
 }

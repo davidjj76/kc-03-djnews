@@ -89,12 +89,16 @@ p {
 }
 
 button {
+    outline: 0;
     &:focus {
         outline: 0;
+    }
+    &::-moz-focus-inner {
+        border: 0;
     }
 }
 
 ::selection {
     color: white;
-    background: $color-secondary; 
-} 
+    background: $color-secondary;
+}
