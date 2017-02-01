@@ -49,7 +49,7 @@ module.exports = {
     },
 
     scrollUp: function() {
-        $('body').animate({scrollTop : 0}, 800);
+        $('body, html').animate({scrollTop : 0}, 800);
     }
 
 
