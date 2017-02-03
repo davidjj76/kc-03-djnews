@@ -1,0 +1,55 @@
+// styles
+#article-comments {
+    div[class^="article-comments-"] {
+        display: none;
+    }
+    &.list .article-comments-list {
+        display: block;
+    }
+    &.blank .article-comments-blank {
+        display: block;
+    }
+    &.error .article-comments-error {
+        display: block;
+    }
+    &.loading .article-comments-loading {
+        display: block;
+    }
+    .comment {
+        opacity: 0;
+        color: white;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 40px;
+        .comment-wrapper {
+            background-color: white;
+            max-width: 75%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 2px;
+            border: 1px solid $body-text-color;
+            color: $color-primary;
+            .comment-name {
+                font-weight: 600;
+                padding-bottom: 10px;
+            }
+            .comment-email {
+                display: inline-block;
+                padding-top: 10px;
+                color: $color-secondary;
+                font-weight: 600;
+            }
+        }
+    }
+    .left {
+        margin-left: -10%;
+        text-align: left;
+        justify-content: flex-start;
+    }
+    .right {
+        margin-right: -10%;
+        text-align: right;
+        justify-content: flex-end;
+    }
+}

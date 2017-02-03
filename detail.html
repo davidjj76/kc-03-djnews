@@ -203,10 +203,20 @@
                 <p>Ahora ya es tarde y la galaxia se encuentra al borde del colapso. De nuevo, una generación entera se ve arrastrada al conflicto por su falta de visión. Solo confío en que, si finalmente la Resistencia prevalece, hayamos aprendido, de una vez por todas, que sin unas instituciones sólidas y una paz justa no libraremos a generaciones futuras de volver a verse arrastradas a la guerra.</p>
             </article>
         </section>
-        <!-- TODO: Comentarios -->
-        <section id="article-comments" class="comments">
+        <section id="article-comments" class="container">
+            <div class="article-comments-list">
+            </div>
+            <div class="article-comments-error">
+                <p>Se ha producido un error al cargar los comentarios</p>
+            </div>
+            <div class="article-comments-blank">
+                <p>Sé el pimero en comentar el artículo</p>
+            </div>
+            <div class="article-comments-loading">
+                Cargando comentarios...
+            </div>
         </section>
-        <form class="new-comment-form" novalidate>
+        <form id="new-comment-form" novalidate>
             <div>
                 <label for="name">Nombre: </label>
                 <input type="text" id="name" name="name" placeholder="Nombre y apellidos" required>

@@ -3,14 +3,15 @@ var $ = require('jquery');
 
 module.exports = {
 
-	loadLikes: function(articles) {
-		for (var i = 0; i < articles.length; i++) {
-			var self = this;
-			var article = articles[i];
-			articleId = $(article).data('articleId');
+	loadLikes: function() {
+		var self = this;
+		var buttonsLike = $('.button-like');
+		for (var i = 0; i < buttonsLike.length; i++) {
+			var buttonLike = buttonsLike[i];
+			var articleId = $(buttonLike).data('articleId');
 			likesService.get(articleId, 
 				function(likes) {
-					self.renderLikes(article, likes);
+					self.renderLikes(buttonLike, likes);
 				}, 
 				function(error) {
 				}
@@ -30,9 +31,9 @@ module.exports = {
 		)
 	},
 
-	renderLikes: function(article, likes) {
+	renderLikes: function(buttonLike, likes) {
 		var likesText = likes == 0 ? '' : '(' + likes + ')';
-		$(article).find('span').text(likesText);
+		$(buttonLike).find('span').text(likesText);
 	}
 
 }

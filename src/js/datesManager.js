@@ -3,14 +3,15 @@ var $ = require('jquery');
 
 module.exports = {
 
-	loadDates: function(elements) {
-		for (var i = 0; i < elements.length; i++) {
+	loadDates: function() {
+		var datesElements = $('time.article-date');
+		for (var i = 0; i < datesElements.length; i++) {
 			var self = this;
-			var element = elements[i];
-			var date = $(element).attr('datetime');
+			var dateElement = datesElements[i];
+			var date = $(dateElement).attr('datetime');
 			datesService.formatDate(date, 
 				function(formatedDate) {
-					self.renderDate(element, formatedDate);
+					self.renderDate(dateElement, formatedDate);
 				}, 
 				function(error) {
 				}
@@ -18,10 +19,10 @@ module.exports = {
 		}
 	},
 
-	renderDate: function (element, date) {
-		var previousDate = $(element).html();
+	renderDate: function (dateElement, date) {
+		var previousDate = $(dateElement).html();
 		if (previousDate != date) {
-			$(element).html(date);		
+			$(dateElement).html(date);		
 		}
 	}
 

@@ -27,26 +27,18 @@ $(document).ready(function() {
         likesManager.addLike(this);
     });
 
-    likesManager.loadLikes($('.button-like'));
-    commentsManager.loadComments($('.link-comments'));
+    likesManager.loadLikes();
+    commentsManager.loadComments();
 
     setInterval(function() {
-        datesManager.loadDates($('time.article-date'));
+        datesManager.loadDates();
     }, 1000);
 
-   	// TODO
     $(window).scroll(function() {
-        $('.comment').each(function() {
-            var objectBottom = $(this).offset().top + $(this).outerHeight();
-            var windowBottom = $(window).scrollTop() + $(window).height();
-            if (windowBottom > objectBottom) {
-                var animation = { 'opacity': '1', 'margin-left': '0' };
-                $(this).animate(animation, 500);
-            }
-        });
+        commentsManager.scrollComments();
     });
 
-    $('.new-comment-form').on('submit', function(event) {
+    $('#new-comment-form').on('submit', function(event) {
         commentsManager.addComment(this);
         event.preventDefault();
     });
