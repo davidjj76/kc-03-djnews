@@ -13,14 +13,8 @@ module.exports = {
                 successCallback(comments);
             },
             error: function(error) {
-                if(error.status = 404) {
-                    // Con Sparrest cuando no hay comentarios da 404
-                    comments = [];
-                    successCallback(comments);
-                } else {
-                    errorCallback(error);
-                    console.error("commentsService: ", error);                    
-                }
+                errorCallback(error);
+                console.error("commentsService: ", error);                    
             }
         })
     },

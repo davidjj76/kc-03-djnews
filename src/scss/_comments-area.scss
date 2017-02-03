@@ -1,5 +1,9 @@
 // styles
 #article-comments {
+    h4 {
+        text-align: center;
+    }
+    margin-top: 40px;
     div[class^="article-comments-"] {
         display: none;
     }
@@ -14,6 +18,21 @@
     }
     &.loading .article-comments-loading {
         display: block;
+    }
+    .article-comments-blank {
+        h4 {
+            color: $color-secondary;
+        }
+    }
+    .article-comments-error {
+        h4 {
+            color: $color-error;
+        }
+    }
+    .article-comments-loading {
+        h4 {
+            color: $color-info;
+        }
     }
     .comment {
         opacity: 0;
@@ -52,4 +71,10 @@
         text-align: right;
         justify-content: flex-end;
     }
+}
+
+.section-separator {
+    @extend .container;
+    height: 1px;
+    background-color: $body-text-color;
 }

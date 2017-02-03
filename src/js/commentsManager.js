@@ -45,7 +45,7 @@ module.exports = {
 	addComment: function(form) {
 		var self = this;
 
-		// TODO: validate form data
+		// Comment object
 		var comment = {
 			name: form.name.value,
 			email: form.email.value,
@@ -55,9 +55,9 @@ module.exports = {
 			function(comment) {
 				var position = $('.comment').length;
 				$('.article-comments-list').append(self.renderComment(comment, position));
+				self.setCommentsList();
 				self.animateComment($('.comment:last'));
 				form.reset();
-				self.setCommentsList();
 			}, 
 			function(error) {
 			}
