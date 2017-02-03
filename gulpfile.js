@@ -14,6 +14,7 @@ var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
 var imagemin = require('gulp-imagemin');
 var responsive = require('gulp-responsive');
+var rename = require('gulp-rename');
 
 // tasks configuration variables
 
@@ -39,6 +40,7 @@ var jsConfig = {
 var uglifyConfig = {
 	taskName: 'uglify',
 	src: './dist/main.js',
+	uglifyFile: 'main.min.js',
 	dest: './dist/'	
 };
 
@@ -94,7 +96,7 @@ var iconsConfig = {
 // default task
 gulp.task('default', [
 	sassConfig.taskName, 
-	jsConfig.taskName, 
+	jsConfig.taskName,
 	imagesConfig.taskName,
 	iconsConfig.taskName,
 	], function() {
@@ -142,9 +144,12 @@ gulp.task(jsConfig.taskName, function() {
 	}))
 	.pipe(buffer())
 	.pipe(sourcemaps.init({ loadMaps: true }))
-	.pipe(sourcemaps.write('./'))
 	.pipe(gulp.dest(jsConfig.dest))
-	.pipe(notify('JS Concatenated!!!'))
+	.pipe(rename(uglifyConfig.uglifyFile))
+	.pipe(uglify())
+	.pipe(sourcemaps.write('./'))
+	.pipe(gulp.dest(uglifyConfig.dest))	
+	.pipe(notify('JS Concatenated & Minified!!!'))
 	.pipe(browserSync.stream());
 });
 

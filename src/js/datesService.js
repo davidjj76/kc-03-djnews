@@ -12,7 +12,7 @@ module.exports = {
         	var momentDate = moment(date);
         	var dateDiff = now.diff(momentDate, 'seconds', true);
         	if (dateDiff < 60) {
-        		data = self.timeAgo(dateDiff, 'segundo');
+        		formatedDate = self.timeAgo(dateDiff, 'segundo');
         	} else {
         		dateDiff = now.diff(momentDate, 'minutes', true);
         		if (dateDiff < 60) {

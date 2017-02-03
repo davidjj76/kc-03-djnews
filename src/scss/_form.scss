@@ -1,0 +1,59 @@
+$inputs-border: 1px solid #dbdbdb;
+$inputs-height: 32px;
+
+// styles
+.form-container {
+	@extend .container;
+	padding-top: 20px;
+	h4 {
+		text-align: center;
+	}
+}
+
+#new-comment-form {
+    max-width: 420px;
+    margin: auto;
+    .form-wrapper {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
+    input,
+    textarea {
+        width: 100%;
+        font-family: $body-font-family;
+        font-size: $font-size-base; 
+        padding: 0 20px;
+        border: $inputs-border;
+        outline: 0;
+        transition: all 0.4s ease 0s;
+        overflow: auto;
+        &:focus {
+            border-color: $color-secondary;
+        }
+    }
+    input {
+        height: $inputs-height;
+    }
+    textarea {
+        padding-top: 10px;
+        resize: none;
+    }
+    button {
+        background-color: white;
+        border: $inputs-border;
+        color: #666;
+        font-weight: 600;
+        height: $inputs-height;
+        margin: 10px 0 0;
+        outline: 0;
+        padding: 0 15px;
+        text-transform: uppercase;
+        transition: all 0.4s ease 0s;
+        cursor: pointer;
+        &:hover {
+            background-color: $color-secondary;
+            color: white
+        }        
+    }
+}

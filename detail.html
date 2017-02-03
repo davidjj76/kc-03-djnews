@@ -89,11 +89,11 @@
             <div class="article-author">
                 <picture>
                     <source srcset="/dist/img/user-01-60px.jpg 60w">
-                    <img class="photo" src="/dist/img/user-01.jpg">
+                    <img class="photo" srcset="/dist/img/user-01.jpg">
                 </picture>
                 <div class="author-wrapper">
                     <a href="#">Martín Benitez</a>
-                    <time class="article-date" datetime="2017-02-01 00:48:00">&nbsp;</time>
+                    <time class="article-date" datetime="2017-02-04 17:36:00">&nbsp;</time>
                 </div>
                 <button type="button" class="button-like" title="Me gusta" data-article-id="1">
                     <div class="button-wrapper">
@@ -108,7 +108,7 @@
                         <source srcset="/dist/img/det-01-420px.jpg 420w, /dist/img/det-01-375px.jpg 375w, /dist/img/det-01-300px.jpg 300w" media="(max-width: 767px)">
                         <source srcset="/dist/img/det-01-768px.jpg 768w" media="(min-width: 768px) and (max-width: 1023px)">
                         <source srcset="/dist/img/det-01-960px.jpg 960w" media="(min-width: 1024px)">
-                        <img class="picture" src="/dist/img/det-01.jpg">
+                        <img class="picture" srcset="/dist/img/det-01.jpg">
                     </picture>
                     <figcaption class="article-picture-caption">
                         <p>Imagen: Lucasfilm / The Walt Disney Company.</p>
@@ -125,7 +125,7 @@
                         <source srcset="/dist/img/det-02-420px.jpg 420w, /dist/img/det-02-375px.jpg 375w, /dist/img/det-02-300px.jpg 300w" media="(max-width: 767px)">
                         <source srcset="/dist/img/det-02-768px.jpg 768w" media="(min-width: 768px) and (max-width: 1023px)">
                         <source srcset="/dist/img/det-02-960px.jpg 960w" media="(min-width: 1024px)">
-                        <img class="picture" src="/dist/img/det-02.jpg">
+                        <img class="picture" srcset="/dist/img/det-02.jpg">
                     </picture>
                     <figcaption class="article-picture-caption">
                         <p>Imagen: Lucasfilm / The Walt Disney Company.</p>
@@ -143,7 +143,7 @@
                         <source srcset="/dist/img/det-03-420px.jpg 420w, /dist/img/det-03-375px.jpg 375w, /dist/img/det-03-300px.jpg 300w" media="(max-width: 767px)">
                         <source srcset="/dist/img/det-03-768px.jpg 768w" media="(min-width: 768px) and (max-width: 1023px)">
                         <source srcset="/dist/img/det-03-960px.jpg 960w" media="(min-width: 1024px)">
-                        <img class="picture" src="/dist/img/det-03.jpg">
+                        <img class="picture" srcset="/dist/img/det-03.jpg">
                     </picture>
                     <figcaption class="article-picture-caption">
                         <p>Imagen: Lucasfilm / The Walt Disney Company.</p>
@@ -158,7 +158,7 @@
                         <source srcset="/dist/img/det-04-420px.jpg 420w, /dist/img/det-04-375px.jpg 375w, /dist/img/det-04-300px.jpg 300w" media="(max-width: 767px)">
                         <source srcset="/dist/img/det-04-768px.jpg 768w" media="(min-width: 768px) and (max-width: 1023px)">
                         <source srcset="/dist/img/det-04-960px.jpg 960w" media="(min-width: 1024px)">
-                        <img class="picture" src="/dist/img/det-04.jpg">
+                        <img class="picture" srcset="/dist/img/det-04.jpg">
                     </picture>
                     <figcaption class="article-picture-caption">
                         <p>Imagen: Lucasfilm / The Walt Disney Company.</p>
@@ -174,7 +174,7 @@
                         <source srcset="/dist/img/det-05-420px.jpg 420w, /dist/img/det-05-375px.jpg 375w, /dist/img/det-05-300px.jpg 300w" media="(max-width: 767px)">
                         <source srcset="/dist/img/det-05-768px.jpg 768w" media="(min-width: 768px) and (max-width: 1023px)">
                         <source srcset="/dist/img/det-05-960px.jpg 960w" media="(min-width: 1024px)">
-                        <img class="picture" src="/dist/img/det-05.jpg">
+                        <img class="picture" srcset="/dist/img/det-05.jpg">
                     </picture>
                     <figcaption class="article-picture-caption">
                         <p>Imagen: Lucasfilm / The Walt Disney Company.</p>
@@ -191,7 +191,7 @@
                         <source srcset="/dist/img/det-06-420px.jpg 420w, /dist/img/det-06-375px.jpg 375w, /dist/img/det-06-300px.jpg 300w" media="(max-width: 767px)">
                         <source srcset="/dist/img/det-06-768px.jpg 768w" media="(min-width: 768px) and (max-width: 1023px)">
                         <source srcset="/dist/img/det-06-960px.jpg 960w" media="(min-width: 1024px)">
-                        <img class="picture" src="/dist/img/det-06.jpg">
+                        <img class="picture" srcset="/dist/img/det-06.jpg">
                     </picture>
                     <figcaption class="article-picture-caption">
                         <p>Imagen: Lucasfilm / The Walt Disney Company.</p>
@@ -203,34 +203,38 @@
                 <p>Ahora ya es tarde y la galaxia se encuentra al borde del colapso. De nuevo, una generación entera se ve arrastrada al conflicto por su falta de visión. Solo confío en que, si finalmente la Resistencia prevalece, hayamos aprendido, de una vez por todas, que sin unas instituciones sólidas y una paz justa no libraremos a generaciones futuras de volver a verse arrastradas a la guerra.</p>
             </article>
         </section>
+        <div class="section-separator"></div>
         <section id="article-comments" class="container">
+            <h2 class="section-title">Comentarios</h2>
+            <div class="article-comments-loading">
+                <h4>Cargando comentarios...</h4>                
+            </div>
+            <div class="article-comments-blank">
+                <h4>Sé el pimero en comentar el artículo</h4>                
+            </div>
             <div class="article-comments-list">
             </div>
             <div class="article-comments-error">
-                <p>Se ha producido un error al cargar los comentarios</p>
-            </div>
-            <div class="article-comments-blank">
-                <p>Sé el pimero en comentar el artículo</p>
-            </div>
-            <div class="article-comments-loading">
-                Cargando comentarios...
+                <h4>Error en la carga de los comentarios</h4>
             </div>
         </section>
-        <form id="new-comment-form" novalidate>
-            <div>
-                <label for="name">Nombre: </label>
-                <input type="text" id="name" name="name" placeholder="Nombre y apellidos" required>
-            </div>
-            <div>
-                <label for="email">Email: </label>
-                <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
-            </div>
-            <div>
-                <label for="message">Mensaje: </label>
-                <textarea name="message" id="messafe" cols="30" rows="10"></textarea>
-            </div>
-            <button>Enviar comentario</button>
-        </form>
+        <div class="form-container">
+            <h4>Escribe un comentario</h4>
+            <form id="new-comment-form" novalidate>
+                <div class="form-wrapper">
+                    <input type="text" id="name" name="name" placeholder="Nombre y apellidos" required>
+                </div>
+                <div class="form-wrapper">
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-wrapper">
+                    <textarea name="message" id="messafe" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                </div>
+                <div class="form-wrapper">
+                    <button>Enviar</button>
+                </div>
+            </form>            
+        </div>
     </main>
     <!-- Footer -->
     <footer id="footer" class="footer-area">
@@ -242,7 +246,7 @@
     <a id="scrollUp" href="#">
         <i class="fa fa-angle-up"></i>
     </a>
-    <script src="dist/main.js"></script>
+    <script src="dist/main.min.js"></script>
 </body>
 
 </html>

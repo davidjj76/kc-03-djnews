@@ -11,7 +11,8 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "jquery": "^3.1.1",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "picturefill": "^3.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.0",
@@ -24,6 +25,7 @@
     "gulp-imagemin": "^3.1.1",
     "gulp-notify": "^2.2.0",
     "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
     "gulp-responsive": "^2.7.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.0",
