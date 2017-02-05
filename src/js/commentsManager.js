@@ -57,9 +57,11 @@ module.exports = {
 			email: form.email.value,
 			message: form.message.value,
 		}
+
 		commentsService.save(comment, 
 			function(comment) {
 				form.reset();
+				$(form).find('button').text('ENVIAR').attr('disabled', false);
 				if($('#article-comments').hasClass('error')) {
 					// Si el estado era error recargamos todos los comentarios
 					// porque no podemos saber si había o no comentarios
@@ -76,6 +78,8 @@ module.exports = {
 				}
 			}, 
 			function(error) {
+				alert('Se ha producido un al enviar el comentario.\n Inténtalo de nuevo, por favor.');
+				$(form).find('button').text('ENVIAR').attr('disabled', false);
 			}
 		)
 	},
@@ -96,8 +100,8 @@ module.exports = {
 	renderComment: function(comment, position) {
 		var html = '';
 		var positionClass = (position % 2 == 0) ? 'left' : 'right';
-		html += '<div class="comment ' + positionClass + '">';
-		html += '<div class="comment-wrapper">';
+		html += '<div class="comment clearfix">';
+		html += '<div class="comment-wrapper ' + positionClass + '"">';
 		html += '<h6 class="comment-name">' + comment.name + '</h6>';
 		html += comment.message;
 		html += '<em><span class="comment-email">' + comment.email + '</span></em>';
@@ -121,7 +125,7 @@ module.exports = {
 
 		// Controlamos cuando mostramos cada comentario
         $('.comment').each(function() {
-            var commentBottom = $(this).offset().top + $(this).outerHeight();
+            var commentBottom = $(this).offset().top + $(this).outerHeight() / 2;
             var scrollBottom = $(window).scrollTop() + $(window).height();
             if (scrollBottom > commentBottom) {
                 self.animateComment(this);
@@ -130,14 +134,16 @@ module.exports = {
     },
 
 	animateComment: function(comment) {
-		if ($(comment).css('opacity') == 0) {
+		var commentWrapper = $(comment).find('.comment-wrapper');
+		if ($(commentWrapper).css('opacity') == 0) {
 			var animation = { 'opacity': '1' };			
-			if($(comment).hasClass('left')) {
+			if($(commentWrapper).hasClass('left')) {
 				animation['margin-left'] = 0;
 			} else {
 				animation['margin-right'] = 0;
 			}
-	        $(comment).animate(animation, 500);
+			console.log("Mostramos comentario...", commentWrapper)
+	        $(commentWrapper).animate(animation, 500);
 		}
 	}
 

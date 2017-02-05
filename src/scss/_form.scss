@@ -1,13 +1,12 @@
 $inputs-border: 1px solid #dbdbdb;
 $inputs-height: 32px;
-
 // styles
 .form-container {
-	@extend .container;
-	padding-top: 20px;
-	h4 {
-		text-align: center;
-	}
+    @extend .container;
+    padding-top: 20px;
+    h4 {
+        text-align: center;
+    }
 }
 
 #new-comment-form {
@@ -16,13 +15,24 @@ $inputs-height: 32px;
     .form-wrapper {
         margin-bottom: 10px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        span {
+            display: none;
+            color: $color-error;
+            font-weight: 600;
+        }
+        &.error span {
+            display: block;
+            padding: 10px 0;
+        }
     }
     input,
     textarea {
         width: 100%;
         font-family: $body-font-family;
-        font-size: $font-size-base; 
+        font-size: $font-size-base;
         padding: 0 20px;
         border: $inputs-border;
         outline: 0;
@@ -40,6 +50,7 @@ $inputs-height: 32px;
         resize: none;
     }
     button {
+        max-width: 100%;
         background-color: white;
         border: $inputs-border;
         color: #666;
@@ -54,6 +65,6 @@ $inputs-height: 32px;
         &:hover {
             background-color: $color-secondary;
             color: white
-        }        
+        }
     }
 }

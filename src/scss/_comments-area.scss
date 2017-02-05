@@ -35,15 +35,11 @@
         }
     }
     .comment {
-        opacity: 0;
-        color: white;
-        position: relative;
-        display: flex;
-        align-items: flex-start;
         margin-bottom: 40px;
         .comment-wrapper {
+            opacity: 0;
             background-color: white;
-            width: 75%;
+            max-width: 75%;
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -61,16 +57,16 @@
                 font-weight: 600;
             }
         }
-    }
-    .left {
-        margin-left: -10%;
-        text-align: left;
-        justify-content: flex-start;
-    }
-    .right {
-        margin-right: -10%;
-        text-align: right;
-        justify-content: flex-end;
+        .left {
+            margin-left: -10%;
+            text-align: left;
+            float: left;
+        }
+        .right {
+            margin-right: -10%;
+            text-align: right;
+            float: right;
+        }
     }
 }
 

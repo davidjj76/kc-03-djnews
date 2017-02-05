@@ -210,12 +210,12 @@
                 <h4>Cargando comentarios...</h4>                
             </div>
             <div class="article-comments-blank">
-                <h4>Sé el pimero en comentar el artículo</h4>                
+                <h4>Eres el pimero en comentar el artículo</h4>                
             </div>
             <div class="article-comments-list">
             </div>
             <div class="article-comments-error">
-                <h4>Error en la carga de los comentarios</h4>
+                <h4>Error al cargar los comentarios</h4>
             </div>
         </section>
         <div class="form-container">
@@ -223,12 +223,15 @@
             <form id="new-comment-form" novalidate>
                 <div class="form-wrapper">
                     <input type="text" id="name" name="name" placeholder="Nombre y apellidos" required>
+                    <span></span>
                 </div>
                 <div class="form-wrapper">
                     <input type="email" id="email" name="email" placeholder="Correo electrónico" required>
+                    <span></span>
                 </div>
                 <div class="form-wrapper">
-                    <textarea name="message" id="messafe" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Mensaje" required></textarea>
+                    <span></span>
                 </div>
                 <div class="form-wrapper">
                     <button>Enviar</button>

@@ -1,6 +1,13 @@
 // styles
-.fix {
-	clear: both;
+.clearfix {
+	&:before,
+  	&:after {
+    	content: " "; // 1
+    	display: table; // 2
+  	}
+  	&:after {
+    	clear: both;
+	}
 }
 
 // reponsive utilities
